@@ -17,12 +17,14 @@ services:
     depends_on:
       - php
   db:
-    image: postgres
+    image: postgres:16-alpine
     restart: always
     ports:
       - 5432:5432
     environment:
+      POSTGRES_DB: appraisal
       POSTGRES_PASSWORD: password
+      POSTGRES_USER: app
     volumes:
       - db-data:/var/lib/postgresql/data
   composer:
