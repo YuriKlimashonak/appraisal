@@ -11,6 +11,11 @@
 <div class="example-wrapper">
     <h1>Заказать услугу оценки</h1>
 
-
+    {{ form_start(orderForm) }}
+    {{ form_row(orderForm.appraisal, {
+        id: "order_title"
+    }) }}
+    <div>Стоимость: <span id="order_cost"></span></div>
+    {{ form_end(orderForm) }}
 </div>
 {% endblock %}
